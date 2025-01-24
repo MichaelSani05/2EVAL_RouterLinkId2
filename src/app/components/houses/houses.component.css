@@ -1,0 +1,36 @@
+#houses{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.house-img{
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    position: relative;
+    max-height: 265px;
+    border-radius: 15px;
+}
+
+.house-fav-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    color: white;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.house-img img{
+    min-width: 100%;
+    width: 100%;
+    min-height: 265px;
+}
+
+.house-img:hover .house-fav-icon{
+    display: block;
+    transition: all 0.3s ease-in-out;
+}

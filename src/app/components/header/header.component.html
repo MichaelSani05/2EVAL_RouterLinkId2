@@ -1,0 +1,41 @@
+<div id="header">
+    <div id="logo">
+        <img src="../../../assets/images/LUMIERE.png" alt="">
+    </div>
+    <div id="header-mid">
+        <nav>
+            <ul>
+                <a href="" [routerLink]="['']" routerLinkActive="active">
+                    <li>Alojamientos</li>
+                </a>
+                <a href="" [routerLink]="['']">
+                    <li>Experiencias</li>
+                </a>
+            </ul>
+        </nav>
+        <div id="header-filters">
+            <div class="filter">
+                <label for="">Destino</label>
+                <input type="text" placeholder="Buscar destinos">
+            </div>
+            <div class="filter" (click)="changeStyle()">
+                <label for="">Llegada</label>
+                <input type="text" placeholder="Introduce la fecha">
+                <div #datePicker id="datePicker">
+                  <app-booking></app-booking>
+                </div>
+            </div>
+            <div class="filter" (click)="changeStyle()">
+                <label for="">Salida</label>
+                <input type="text" placeholder="Introduce la fecha">
+            </div>
+            <div class="filter">
+                <label for="">Viajeros</label>
+                <input type="text" placeholder="Añade viajeros">
+            </div>
+        </div>
+    </div>
+    <div id="user">
+
+    </div>
+</div>
