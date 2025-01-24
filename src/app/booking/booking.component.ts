@@ -5,18 +5,25 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BookingDatesService } from '../services/booking-dates.service'; // Importa el servicio
 
 @Component({
   selector: 'app-booking',
   standalone: true,
   imports: [MatDatepickerModule, MatFormFieldModule, MatInputModule, FormsModule, CommonModule, MatNativeDateModule],
   templateUrl: './booking.component.html',
-  styleUrl: './booking.component.css'
+  styleUrl: './booking.component.css',
 })
 export class BookingComponent {
   startDate: Date | null = null;
   endDate: Date | null = null;
   pricePerNight = 100;
+
+  constructor(private bookingDatesService: BookingDatesService) {}
+
+  saveDates(): void {
+    this.bookingDatesService.setDates(this.startDate, this.endDate);
+  }
 
   get totalNights(): number {
     if (this.startDate && this.endDate) {

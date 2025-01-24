@@ -18,9 +18,9 @@
                 <label for="">Destino</label>
                 <input type="text" placeholder="Buscar destinos">
             </div>
-            <div class="filter" (click)="changeStyle()">
-                <label for="">Llegada</label>
-                <input type="text" placeholder="Introduce la fecha">
+            <div class="filter">
+                <label for="" (click)="changeStyle()">Llegada</label>
+                <input type="text" placeholder="Introduce la fecha" (click)="changeStyle()">
                 <div #datePicker id="datePicker">
                   <app-booking></app-booking>
                 </div>

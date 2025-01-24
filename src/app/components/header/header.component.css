@@ -76,4 +76,5 @@ input:focus, input:active, input:focus-visible{
     box-sizing: border-box;
     padding: 20px;
     z-index: 99;
+    display: none;
 }

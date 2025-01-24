@@ -17,10 +17,10 @@ export class HeaderComponent {
 
   changeStyle(): void {
     if (this.datePicker && this.fechaCLicked) {
-      this.renderer.setStyle(this.datePicker.nativeElement, 'background-color', 'red');
+      this.renderer.setStyle(this.datePicker.nativeElement, 'display', 'none');
       this.fechaCLicked = false;
     } else if (this.datePicker && !this.fechaCLicked) {
-      this.renderer.setStyle(this.datePicker.nativeElement, 'background-color', 'blue');
+      this.renderer.setStyle(this.datePicker.nativeElement, 'display', 'block');
       this.fechaCLicked = true;
     }
   }
