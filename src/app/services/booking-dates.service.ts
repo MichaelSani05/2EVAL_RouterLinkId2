@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookingDatesService {
-  private startDate: Date | null = null;
-  private endDate: Date | null = null;
+  private startDateSubject = new BehaviorSubject<Date | null>(null);
+  private endDateSubject = new BehaviorSubject<Date | null>(null);
+
+  public startDate$: Observable<Date | null> = this.startDateSubject.asObservable();
+  public endDate$: Observable<Date | null> = this.endDateSubject.asObservable();
 
   setDates(startDate: Date | null, endDate: Date | null): void {
-    this.startDate = startDate;
-    this.endDate = endDate;
+    this.startDateSubject.next(startDate);
+    this.endDateSubject.next(endDate);
   }
 
   getStartDate(): Date | null {
-    return this.startDate;
+    return this.startDateSubject.getValue();
   }
 
   getEndDate(): Date | null {
-    return this.endDate;
+    return this.endDateSubject.getValue();
   }
 }

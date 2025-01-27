@@ -50,7 +50,7 @@ label{
     font-size: 10pt;
     font-weight: 500;
 }
-input{
+input, p{
     padding: 35px 25px 15px 25px;
     height: 100%;
     border: none;
@@ -65,7 +65,7 @@ input:focus, input:active, input:focus-visible{
     outline: none;
 }
 
-#datePicker{
+.datePicker{
     position: absolute;
     bottom: 0px;
     width: 600px;

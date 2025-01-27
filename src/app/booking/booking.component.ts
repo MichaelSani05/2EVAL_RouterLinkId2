@@ -21,11 +21,28 @@ export class BookingComponent {
 
   constructor(private bookingDatesService: BookingDatesService) {}
 
+  ngOnInit(): void {
+    this.bookingDatesService.startDate$.subscribe((date) => {
+      this.startDate = date;
+      this.calculateTotals();
+    });
+
+    this.bookingDatesService.endDate$.subscribe((date) => {
+      this.endDate = date;
+      this.calculateTotals();
+    });
+  }
+
   saveDates(): void {
     this.bookingDatesService.setDates(this.startDate, this.endDate);
   }
 
-  get totalNights(): number {
+  calculateTotals(): void {
+    this.totalNights = this.calculateTotalNights();
+    this.totalPrice = this.calculateTotalPrice();
+  }
+
+  calculateTotalNights(): number {
     if (this.startDate && this.endDate) {
       const timeDiff = this.endDate.getTime() - this.startDate.getTime();
       return Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
@@ -33,7 +50,10 @@ export class BookingComponent {
     return 0;
   }
 
-  get totalPrice(): number {
+  calculateTotalPrice(): number {
     return this.totalNights * this.pricePerNight;
   }
+
+  totalNights: number = 0;
+  totalPrice: number = 0;
 }

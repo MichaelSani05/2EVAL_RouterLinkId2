@@ -20,14 +20,17 @@
             </div>
             <div class="filter">
                 <label for="" (click)="changeStyle()">Llegada</label>
-                <input type="text" placeholder="Introduce la fecha" (click)="changeStyle()">
-                <div #datePicker id="datePicker">
+                <input type="text" [placeholder]="startDate ? (startDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
+                <div #datePicker class="datePicker">
                   <app-booking></app-booking>
                 </div>
             </div>
-            <div class="filter" (click)="changeStyle()">
-                <label for="">Salida</label>
-                <input type="text" placeholder="Introduce la fecha">
+            <div class="filter">
+                <label for="" (click)="changeStyle()">Salida</label>
+                <input type="text" [placeholder]="endDate ? (endDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
+                <div #datePicker class="datePicker">
+                    <app-booking></app-booking>
+                </div>
             </div>
             <div class="filter">
                 <label for="">Viajeros</label>

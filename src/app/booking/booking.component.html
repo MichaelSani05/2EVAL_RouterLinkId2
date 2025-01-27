@@ -1,29 +1,16 @@
-<mat-form-field>
-  <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" (dateChange)="saveDates()" placeholder="Fecha de llegada">
-  <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-  <mat-datepicker #startPicker></mat-datepicker>
-</mat-form-field>
-
-<mat-form-field>
-  <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" (dateChange)="saveDates()" placeholder="Fecha de salida">
-  <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
-  <mat-datepicker #endPicker></mat-datepicker>
-</mat-form-field>
+<div class="dates-pickers">
+  <mat-form-field>
+    <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" (dateChange)="saveDates()" placeholder="Fecha de llegada">
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" (dateChange)="saveDates()" placeholder="Fecha de salida">
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+  </mat-form-field>
+</div>
 
 <p>Total noches: {{ totalNights }}</p>
-<p>Precio total: {{ totalPrice | currency }}</p>
-
-  <!--
-  <div *ngIf="startDate && endDate">
-    <p>
-      Has seleccionado del <strong>{{ startDate | date }}</strong> al
-      <strong>{{ endDate | date }}</strong>.
-    </p>
-    <p>
-      Total de noches: <strong>{{ totalNights }}</strong>
-    </p>
-    <p>
-      Precio total: <strong>{{ totalPrice | currency }}</strong>
-    </p>
-  </div>
-  -->
+<p>Precio total: {{ totalPrice }} €</p>

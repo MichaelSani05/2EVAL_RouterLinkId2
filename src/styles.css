@@ -30,3 +30,9 @@ span{
     display: flex;
     margin: 5px 0px;
 }
+
+#header-filters > div:nth-child(2) > div > app-booking{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
