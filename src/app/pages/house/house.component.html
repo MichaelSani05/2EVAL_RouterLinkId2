@@ -1,55 +1,66 @@
 <div id="house-page">
-    <h1>{{house.name}}</h1>
-    <img src="{{house.image}}" alt="">
-    <section id="house-info">
-        <h3>{{house.type}} en {{house.city}}, {{house.country}}</h3>
-        <p>4 viajeros - 1 dormitorio - 3 camas - 1 baño</p>
-        <div id="calificacion">
-            {{house.rating}}
-            <div class="stars">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <section class="house-section">
+        <div class="house-content">
+            <h1>{{house.name}}</h1>
+            <div class="house-image">
+                <img src="{{house.image}}" alt="">
             </div>
-        </div>
-        <div class="host">
-            <img src="../../../assets/images/user.jpeg" alt="">
-            <div class="host-info">
-                <h4>Anfitrión: {{house.host}}</h4>
-                <span>5 años de experiencia</span>
-            </div>
-        </div>
-        <hr>
-        <div id="caracts">
-            <div class="caract">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="#000" d="M215.15 40.85A78 78 0 0 0 86.2 121.31l-56.1 56.1a13.94 13.94 0 0 0-4.1 9.9V216a14 14 0 0 0 14 14h32a6 6 0 0 0 6-6v-18h18a6 6 0 0 0 6-6v-18h18a6 6 0 0 0 4.24-1.76l10.45-10.44A77.6 77.6 0 0 0 160 174h.1a78 78 0 0 0 55.05-133.15M226 98.16c-1.12 35.16-30.67 63.8-65.88 63.84a65.9 65.9 0 0 1-24.51-4.67a6 6 0 0 0-6.64 1.26L117.51 170H96a6 6 0 0 0-6 6v18H72a6 6 0 0 0-6 6v18H40a2 2 0 0 1-2-2v-28.69a2 2 0 0 1 .58-1.41l58.83-58.83a6 6 0 0 0 1.26-6.64A65.6 65.6 0 0 1 94 95.92c0-35.21 28.68-64.76 63.83-65.92A66 66 0 0 1 226 98.16M190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10"/></svg>
-                <div class="caract-content">
-                    <h4>Muy buen proceso de llegada</h4>
-                    <span>A los últimos huéspedes les encantó empezar su estancia con buen pie.</span>
+            <section id="house-info">
+                <h3>{{house.type}} en {{house.city}}, {{house.country}}</h3>
+                <p>4 viajeros - 1 dormitorio - 3 camas - 1 baño</p>
+                <div id="calificacion">
+                    {{house.rating}}
+                    <div class="stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="#000" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
                 </div>
-            </div>
-            <div class="caract">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M12 21.933a1.72 1.72 0 0 1-1.384-.691L5.555 14.5a7.894 7.894 0 1 1 12.885-.009l-5.055 6.749a1.72 1.72 0 0 1-1.385.693m-.008-18.867a6.8 6.8 0 0 0-4.578 1.749a6.89 6.89 0 0 0-1.05 9.1l5.051 6.727a.73.73 0 0 0 .584.292a.73.73 0 0 0 .586-.292l5.044-6.734A6.874 6.874 0 0 0 12.81 3.113a7 7 0 0 0-.818-.047"/><path fill="#000" d="M12 12.5a2.5 2.5 0 1 1 2.5-2.5a2.5 2.5 0 0 1-2.5 2.5m0-4a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 8.5"/></svg>
-                <div class="caract-content">
-                    <h4>Barrio tranquilo</h4>
-                    <span>Los huéspedes afirman que este alojamiento está en una zona tranquila.</span>
+                <div class="host">
+                    <img src="../../../assets/images/user.jpeg" alt="">
+                    <div class="host-info">
+                        <h4>Anfitrión: {{house.host}}</h4>
+                        <span>5 años de experiencia</span>
+                    </div>
                 </div>
-            </div>
-            <div class="caract">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="#000" d="M9 19v-6.5m0 0v-7h4.5a3.5 3.5 0 1 1 0 7zm3 11C5.649 23.5.5 18.351.5 12S5.649.5 12 .5S23.5 5.649 23.5 12S18.351 23.5 12 23.5Z"/></svg>
-                <div class="caract-content">
-                    <h4>Aparca gratis</h4>
-                    <span>Este es uno de los pocos alojamientos de la zona con aparcamiento gratuito.</span>
+                <hr>
+                <div id="caracts">
+                    <div class="caract">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="#000" d="M215.15 40.85A78 78 0 0 0 86.2 121.31l-56.1 56.1a13.94 13.94 0 0 0-4.1 9.9V216a14 14 0 0 0 14 14h32a6 6 0 0 0 6-6v-18h18a6 6 0 0 0 6-6v-18h18a6 6 0 0 0 4.24-1.76l10.45-10.44A77.6 77.6 0 0 0 160 174h.1a78 78 0 0 0 55.05-133.15M226 98.16c-1.12 35.16-30.67 63.8-65.88 63.84a65.9 65.9 0 0 1-24.51-4.67a6 6 0 0 0-6.64 1.26L117.51 170H96a6 6 0 0 0-6 6v18H72a6 6 0 0 0-6 6v18H40a2 2 0 0 1-2-2v-28.69a2 2 0 0 1 .58-1.41l58.83-58.83a6 6 0 0 0 1.26-6.64A65.6 65.6 0 0 1 94 95.92c0-35.21 28.68-64.76 63.83-65.92A66 66 0 0 1 226 98.16M190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10"/></svg>
+                        <div class="caract-content">
+                            <h4>Muy buen proceso de llegada</h4>
+                            <span>A los últimos huéspedes les encantó empezar su estancia con buen pie.</span>
+                        </div>
+                    </div>
+                    <div class="caract">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000" d="M12 21.933a1.72 1.72 0 0 1-1.384-.691L5.555 14.5a7.894 7.894 0 1 1 12.885-.009l-5.055 6.749a1.72 1.72 0 0 1-1.385.693m-.008-18.867a6.8 6.8 0 0 0-4.578 1.749a6.89 6.89 0 0 0-1.05 9.1l5.051 6.727a.73.73 0 0 0 .584.292a.73.73 0 0 0 .586-.292l5.044-6.734A6.874 6.874 0 0 0 12.81 3.113a7 7 0 0 0-.818-.047"/><path fill="#000" d="M12 12.5a2.5 2.5 0 1 1 2.5-2.5a2.5 2.5 0 0 1-2.5 2.5m0-4a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 8.5"/></svg>
+                        <div class="caract-content">
+                            <h4>Barrio tranquilo</h4>
+                            <span>Los huéspedes afirman que este alojamiento está en una zona tranquila.</span>
+                        </div>
+                    </div>
+                    <div class="caract">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="#000" d="M9 19v-6.5m0 0v-7h4.5a3.5 3.5 0 1 1 0 7zm3 11C5.649 23.5.5 18.351.5 12S5.649.5 12 .5S23.5 5.649 23.5 12S18.351 23.5 12 23.5Z"/></svg>
+                        <div class="caract-content">
+                            <h4>Aparca gratis</h4>
+                            <span>Este es uno de los pocos alojamientos de la zona con aparcamiento gratuito.</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <hr>
+                <div id="descripcion">
+                    {{house.description}}
+                </div>
+                <hr>
+            </section>
         </div>
-        <hr>
-        <div id="descripcion">
-            {{house.description}}
+        <div class="house-price">
+            <strong>{{house.pricePerNight}} € </strong> noche
+            
+            <app-booking></app-booking>
         </div>
-        <hr>
-        <app-booking></app-booking>
     </section>
+    <app-houses [houses]="houses"></app-houses>
 </div>

@@ -1,4 +1,24 @@
 <div id="main-container">
+    <div class="category-hero" *ngIf="category == 'Cabaña'">
+        <img src="../../../assets/images/cabaña.webp" alt="" width="500">
+        <h3>Escapa del bullicio y sumérgete en la calma de nuestras cabañas. Rodeadas de naturaleza, ideales para reconectar contigo mismo y disfrutar de momentos inolvidables. ¡Tu refugio en el bosque te espera!</h3>
+        <p>Reserva tu cabaña hoy y vive una experiencia única.</p>
+    </div>
+    <div class="category-hero" *ngIf="category == 'Mansion'">
+        <img src="../../../assets/images/mansion.webp" alt="" width="500">
+        <h3>Experimenta el lujo en su máxima expresión. Nuestras mansiones ofrecen espacios exclusivos, comodidades de primera clase y un ambiente refinado para aquellos que buscan lo mejor. Vive como siempre soñaste.</h3>
+        <p>Descubre el lujo que te mereces. Contáctanos para más información.</p>
+    </div>
+    <div class="category-hero" *ngIf="category == 'Playa'">
+        <img src="../../../assets/images/playa.webp" alt="" width="500">
+        <h3>Despierta con el sonido del mar y disfruta de días llenos de sol y brisa fresca. Nuestras casas pie de playa son el lugar perfecto para desconectar y disfrutar de unas vacaciones inolvidables.</h3>
+        <p>Reserva ahora y vive la magia de la playa.</p>
+    </div>
+    <div class="category-hero" *ngIf="category == ''">
+        <img src="../../../assets/images/todos.webp" alt="" width="500">
+        <h3>Explora nuestra selección de alojamientos exclusivos, diseñados para adaptarse a todos los estilos y gustos. Ya sea que busques relajarte en medio de la naturaleza, disfrutar de la brisa del mar o vivir una experiencia de lujo, tenemos el lugar perfecto para ti.</h3>
+        <p>Encuentra tu alojamiento ideal. ¡Explora todas las opciones y reserva ahora!</p>
+    </div>
     <div id="categories">
         <div class="category" (click)="changeCategory('Playa')">
             <img src="../../../assets/images/category-1.jpg" alt="">
@@ -17,5 +37,6 @@
             <span>Todos</span>
         </div>
     </div>
+    
     <app-houses [houses]="houses"></app-houses>
 </div>
