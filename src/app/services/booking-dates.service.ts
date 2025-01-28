@@ -11,6 +11,8 @@ export class BookingDatesService {
   public startDate$: Observable<Date | null> = this.startDateSubject.asObservable();
   public endDate$: Observable<Date | null> = this.endDateSubject.asObservable();
 
+  constructor() {}
+
   setDates(startDate: Date | null, endDate: Date | null): void {
     this.startDateSubject.next(startDate);
     this.endDateSubject.next(endDate);
@@ -22,5 +24,24 @@ export class BookingDatesService {
 
   getEndDate(): Date | null {
     return this.endDateSubject.getValue();
+  }
+
+  calculateTotalNights(): number {
+    const startDate = this.getStartDate();
+    const endDate = this.getEndDate();
+
+    if (startDate && endDate) {
+      if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+        throw new Error('Las fechas proporcionadas no son válidas.');
+      }
+
+      const timeDiff = endDate.getTime() - startDate.getTime();
+
+      const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+      return nights > 0 ? nights : 0;
+    }
+
+    return 0;
   }
 }

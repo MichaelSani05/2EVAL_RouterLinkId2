@@ -60,6 +60,20 @@
             <strong>{{house.pricePerNight}} € </strong> noche
             
             <app-booking></app-booking>
+            
+            <div class="price-calc">
+                <p class="price-operation">{{house.pricePerNight}} x {{ totalNights }}</p>
+                <p>{{ house.pricePerNight * totalNights }} €</p>
+            </div>
+            <div class="price-calc">
+                <p class="price-operation">Impuesto 5%</p>
+                <p>{{(5 * (house.pricePerNight * totalNights)) / 100}} €</p>
+            </div>
+            <hr>
+            <div class="price-calc">
+                <p class="total-price">Total</p>
+                <p class="total-price">{{(house.pricePerNight * totalNights) + ((5 * (house.pricePerNight * totalNights)) / 100)}} €</p>
+            </div>
         </div>
     </section>
     <app-houses [houses]="houses"></app-houses>

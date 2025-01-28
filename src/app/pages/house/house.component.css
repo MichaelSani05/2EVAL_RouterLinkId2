@@ -110,3 +110,16 @@ hr{
     gap: 20px;
     margin: 20px 0px;
 }
+
+.price-calc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-operation{
+    text-decoration: underline;
+}
+
+.total-price{
+    font-weight: bold;
+}

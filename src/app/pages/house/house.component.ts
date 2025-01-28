@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HouseService } from '../../services/house.service';
 import { BookingComponent } from '../../booking/booking.component';
 import { HousesComponent } from "../../components/houses/houses.component";
+import { BookingDatesService } from '../../services/booking-dates.service';
 
 @Component({
   selector: 'app-house',
@@ -16,8 +17,10 @@ export class HouseComponent {
   productId!: number;
   house! : any[10]
   houses! : any[]
+  totalNights: number = 0
+  totalPrice = 0
 
-  constructor(private houseService : HouseService) {}
+  constructor(private houseService : HouseService, private bookingService : BookingDatesService) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -26,8 +29,20 @@ export class HouseComponent {
         this.house = this.houseService.getHouseById(this.productId);
         this.houses = this.houseService.filterHousesByCategory(this.house.category);
         this.houses = this.houses.filter((house) => house.id !== this.house.id);
+        
       }
     });
+
+    this.bookingService.startDate$.subscribe((date) => {
+      this.totalPrice = this.calculatePricePerNight();
+      this.totalNights = this.bookingService.calculateTotalNights();
+    });
+
+    this.bookingService.endDate$.subscribe((date) => {
+      this.totalNights = this.bookingService.calculateTotalNights();
+      this.totalPrice = this.calculatePricePerNight();
+    });
+
   }
 
   isSticky: boolean = true;
@@ -58,5 +73,13 @@ export class HouseComponent {
         housePrice.classList.add('sticky');
       }
     }
+  }
+
+  calculatePricePerNight(): number{
+    const pricePerNight = this.house.pricePerNight;
+    const nights = this.totalNights;
+    const price = pricePerNight * nights;
+
+    return price;
   }
 }

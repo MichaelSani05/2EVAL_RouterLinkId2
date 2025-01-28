@@ -26,7 +26,8 @@
 }
 
 .category-hero img, .category-hero h3, .category-hero p{
-    max-width: 80%;
+    width: 80%;
+    max-width: 1000px;
 }
 
 .category-hero img{
