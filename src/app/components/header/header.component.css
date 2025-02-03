@@ -79,25 +79,29 @@ input:focus, input:active, input:focus-visible{
     display: none;
 }
 
+.close-button, .toggle-button{
+    display: none;
+}
+
 @media screen and (max-width: 940px) {
     #header-filters{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
-        height: 600px;
         padding: 50px;
         z-index: 99;
         background: white;
         box-sizing: border-box;
         width: 100%;
-        max-width: 600px;
+        display: none;
+        border-radius: 0px;
     }
 
     .datePicker{
@@ -106,5 +110,33 @@ input:focus, input:active, input:focus-visible{
 
     input{
         box-sizing: border-box;
+        width: 100%;
+    }
+
+    .filter{
+        width: 100%;
+    }
+
+    .close-button, .toggle-button{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: block;
+    }
+
+    #logo img{
+        width: 75px;
+    }
+
+}
+
+@media screen and (min-width: 941px) {
+    #header-filters{
+        display: flex !important;
+    }
+
+    body{
+        overflow: visible !important;
+        overflow-x: hidden;
     }
 }

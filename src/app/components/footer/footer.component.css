@@ -1,4 +1,4 @@
-/* Estilos generales del footer */
+
 .footer {
     background-color: #f7f7f7;
     padding: 40px 20px;
@@ -46,7 +46,6 @@
     color: var(--primary-color);
 }
 
-/* Estilos para redes sociales */
 .social-links {
     display: flex;
     gap: 15px;
@@ -62,10 +61,10 @@
     color: var(--primary-color);
 }
 
-/* Estilos para el formulario de newsletter */
 .newsletter-form {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .newsletter-form input {
@@ -91,7 +90,6 @@
     background-color: var(--primary-color);
 }
 
-/* Estilos para la sección inferior del footer */
 .footer-bottom {
     text-align: center;
     margin-top: 30px;

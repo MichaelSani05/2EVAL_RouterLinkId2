@@ -1,44 +1,49 @@
-<div id="header">
-    <div id="logo">
-        <img src="../../../assets/images/LUMIERE.png" alt="">
+<div id="header" class="container">
+    <div id="logo" class="logo">
+        <img src="../../../assets/images/LUMIERE-2.png" alt="">
     </div>
     <div id="header-mid">
         <nav>
-            <ul>
-                <a [routerLink]="['home']" routerLinkActive="active">
-                    <li>Home</li>
-                </a>
-                <a [routerLink]="['alojamiento']" routerLinkActive="active">
-                    <li>Alojamientos</li>
-                </a>
-            </ul>
+          <ul>
+            <a [routerLink]="['home']" routerLinkActive="active">
+              <li>Home</li>
+            </a>
+            <a [routerLink]="['alojamiento']" routerLinkActive="active">
+              <li>Alojamientos</li>
+            </a>
+          </ul>
         </nav>
-        <div id="header-filters">
-            <div class="filter">
-                <label for="">Destino</label>
-                <input type="text" placeholder="Buscar destinos">
+      
+        <div id="header-filters" [class.active]="showNav">
+          <div class="filter">
+            <label for="">Destino</label>
+            <input type="text" placeholder="Buscar destinos">
+          </div>
+          <div class="filter">
+            <label for="" (click)="changeStyle()">Llegada</label>
+            <input type="text" [placeholder]="startDate ? (startDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
+            <div #datePicker class="datePicker">
+              <app-booking></app-booking>
             </div>
-            <div class="filter">
-                <label for="" (click)="changeStyle()">Llegada</label>
-                <input type="text" [placeholder]="startDate ? (startDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
-                <div #datePicker class="datePicker">
-                  <app-booking></app-booking>
-                </div>
+          </div>
+          <div class="filter">
+            <label for="" (click)="changeStyle()">Salida</label>
+            <input type="text" [placeholder]="endDate ? (endDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
+            <div #datePicker class="datePicker">
+              <app-booking></app-booking>
             </div>
-            <div class="filter">
-                <label for="" (click)="changeStyle()">Salida</label>
-                <input type="text" [placeholder]="endDate ? (endDate | date: 'dd/MM/yyyy') : 'Selecciona la fecha'" (click)="changeStyle()">
-                <div #datePicker class="datePicker">
-                    <app-booking></app-booking>
-                </div>
-            </div>
-            <div class="filter">
-                <label for="">Viajeros</label>
-                <input type="text" placeholder="Añade viajeros">
-            </div>
+          </div>
+          <div class="filter">
+            <label for="">Viajeros</label>
+            <input type="text" placeholder="Añade viajeros">
+          </div>
+          
+          <button class="close-button" (click)="closeNav()">
+            X
+          </button>
         </div>
     </div>
-    <div id="user">
-
-    </div>
+    <button class="toggle-button" (click)="toggleNav()">
+        ☰
+    </button>
 </div>

@@ -24,7 +24,7 @@ export class HouseComponent {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.productId = parseInt(params.get('id')!);
+    this.productId = parseInt(params.get('id')!);
       if (this.productId) {
         this.house = this.houseService.getHouseById(this.productId);
         this.houses = this.houseService.filterHousesByCategory(this.house.category);
