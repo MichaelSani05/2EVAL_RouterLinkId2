@@ -1,11 +1,9 @@
 
-.mat-mdc-form-field{
-    width: 50%;
-}
 
 .dates-pickers{
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 p{

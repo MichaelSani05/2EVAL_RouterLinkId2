@@ -1,6 +1,6 @@
 <div id="houses">
     <div class="house" *ngFor="let house of houses">
-        <a href="" [routerLink]="['/house', house.id]">
+        <a [routerLink]="['/', house.category, house.id]">
             <div class="house-img">
                 <img src="{{house.image}}" alt="">
                 <div class="house-fav-icon">

@@ -123,3 +123,32 @@ hr{
 .total-price{
     font-weight: bold;
 }
+
+#house-info h3, #house-info p{
+    max-width: 75%;
+}
+
+@media screen and (max-width: 960px) {
+    .house-section{
+        display: block;
+        min-height: 100vh;
+    }
+    
+    .house-content{
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .house-price{
+        width: 100%;
+        margin-top: 0px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    #calificacion{
+        position: relative;
+        margin: 25px 0px;
+    }
+}
